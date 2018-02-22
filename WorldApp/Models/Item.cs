@@ -13,6 +13,7 @@ namespace WorldApp.Models
         public virtual string Description { get; set; }
         public virtual double Weight { get; set; }
         public virtual Slot EqipSlot { get; set; }
+        public virtual Type Type { get; set; }
 
         public virtual bool IsStackable { get; set; }
         public virtual bool IsDestroyable { get; set; }
@@ -23,10 +24,18 @@ namespace WorldApp.Models
     public enum Slot
     {
         None,
+        BothHand,
         RightHand,
         LeftHand,
         Head,
         Body,
         Legs
+    }
+
+    public enum Type
+    {
+        Resource, 
+        Weapon,
+        Armor
     }
 }

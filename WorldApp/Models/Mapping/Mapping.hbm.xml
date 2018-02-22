@@ -10,6 +10,7 @@
     </property>
     <property name="Weight" not-null="true" />
     <property name="EqipSlot" not-null="true" />
+    <property name="Type" not-null="true" />
     <property name="IsStackable" not-null="true" />
     <property name="IsDestroyable" not-null="true" />
     <property name="IsDroppable" not-null="true" />
@@ -44,7 +45,6 @@
     </property>
   </class>
 
-
   <class name="Neutral" table="Neutrals" dynamic-update="true" >
     <id name="ID" type="guid">
       <generator class="guid"/>
@@ -61,5 +61,4 @@
     <property name="IsAggressive" />
     <property name="IsImmortal" />
   </class>
-
 </hibernate-mapping>

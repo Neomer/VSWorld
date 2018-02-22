@@ -12,5 +12,6 @@ namespace WorldApp.Models
         public virtual string Name { get; set; }
         public virtual IList<Skill> Skills { get; set; }
         public virtual Inventory Inventory { get; set; }
+        public virtual Race Race { get; set; }
     }
 }
