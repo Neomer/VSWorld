@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" auto-import="true" assembly="WorldApp" namespace="WorldApp.Models">
+  <class name="Item" table="Items" dynamic-update="true" >
+    <id name="ID" type="guid">
+      <generator class="guid"/>
+    </id>
+    <property name="Name" not-null="true" />
+    <property name="Description">
+      <column name="Description" sql-type="text" />
+    </property>
+    <property name="Weight" not-null="true" />
+    <property name="EqipSlot" not-null="true" />
+    <property name="IsStackable" not-null="true" />
+    <property name="IsDestroyable" not-null="true" />
+    <property name="IsDroppable" not-null="true" />
+    <property name="IsEquippable" not-null="true" />
+  </class>
+
+  <class name="Race" table="Races" dynamic-update="true" >
+    <id name="ID" type="guid">
+      <generator class="guid"/>
+    </id>
+    <property name="Name" not-null="true" />
+    <property name="Description">
+      <column name="Description" sql-type="text" />
+    </property>
+  </class>
+
+  <class name="Hero" table="Heros" dynamic-update="true" >
+    <id name="ID" type="guid">
+      <generator class="guid"/>
+    </id>
+    <property name="Name" not-null="true" />
+    <many-to-one name="Race" class="Race" column="RaceID"/>
+  </class>
+
+  <class name="Effect" table="Effects" dynamic-update="true" >
+    <id name="ID" type="guid">
+      <generator class="guid"/>
+    </id>
+    <property name="Name" not-null="true" />
+    <property name="Description">
+      <column name="Description" sql-type="text" />
+    </property>
+  </class>
+
+
+  <class name="Neutral" table="Neutrals" dynamic-update="true" >
+    <id name="ID" type="guid">
+      <generator class="guid"/>
+    </id>
+    <property name="Name" not-null="true" />
+    <property name="Description">
+      <column name="Description" sql-type="text" />
+    </property>
+    <property name="Level" />
+    <property name="Experience" />
+    <property name="Health" />
+    <property name="Mana" />
+    <property name="IsAttackable" />
+    <property name="IsAggressive" />
+    <property name="IsImmortal" />
+  </class>
+
+</hibernate-mapping>
