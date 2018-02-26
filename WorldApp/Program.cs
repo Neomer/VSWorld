@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using WorldApp.Models;
+using WorldApp.Models.Managers;
 
 namespace WorldApp
 {
@@ -15,6 +16,8 @@ namespace WorldApp
         {
             var appPath = Assembly.GetExecutingAssembly().Location;
             NHibernateHelper.Instance.Initialize(appPath.Substring(0, appPath.LastIndexOf("\\")));
+            Program.GenerateModels();
+
         }
 
         private static void GenerateModels()
@@ -36,6 +39,13 @@ namespace WorldApp
             items.Add(new Item() { ID = Guid.NewGuid(), Name = "Легкий лук", Description = "Небольшой лук, вырезанный не из самых подходящих пород деревьев. Хороший выбор для путешественника, которому не из чего выбирать.", EqipSlot = Slot.BothHand, Type = Models.Type.Weapon, Weight = 0.084, IsDestroyable = true, IsDroppable = true, IsEquippable = true, IsStackable = false });
             items.Add(new Item() { ID = Guid.NewGuid(), Name = "Короткий деревянный меч", Description = "", EqipSlot = Slot.RightHand, Type = Models.Type.Weapon, Weight = 0.075, IsDestroyable = true, IsDroppable = true, IsEquippable = true, IsStackable = false });
             Program.SaveCollection(items);
+
+            var neutrals = new List<Neutral>();
+            neutrals.Add(new Neutral() { ID = Guid.NewGuid(), Name = "Заяц", Description = "Абсолютно безобидное животное не представляющее никому угрозы.", IsImmortal = false, IsAggressive = false, IsAttackable = true, Level = 1, Health = 10, Mana = 1, Experience = 1, Inventory = null, IsImmobile = false, PositionX = 0, PositionY = 0, MovingDistance = 10 });
+            neutrals.Add(new Neutral() { ID = Guid.NewGuid(), Name = "Волк", Description = "Волк", IsImmortal = false, IsAggressive = true, IsAttackable = true, Level = 2, Health = 20, Mana = 1, Experience = 5, Inventory = null, IsImmobile = false, PositionX = 0, PositionY = 0, MovingDistance = 10 });
+            neutrals.Add(new Neutral() { ID = Guid.NewGuid(), Name = "Помощник", Description = "Помощник для всех новичков.", IsImmortal = true, IsAggressive = false, IsAttackable = false, IsImmobile = true, Level = 0, Health = 0, Mana = 0, Experience = 0, Inventory = null, PositionX = 10, PositionY = 10, MovingDistance = 0 });
+            Program.SaveCollection(neutrals);
+
         }
 
         private static void SaveCollection(IEnumerable<IEntity> list)
@@ -54,6 +64,8 @@ namespace WorldApp
                 catch (Exception ex)
                 {
                     tr.Rollback();
+
+                    Console.WriteLine(ex.Message);
                 }
             }
         }

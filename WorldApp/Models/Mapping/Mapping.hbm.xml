@@ -27,12 +27,28 @@
     </property>
   </class>
 
-  <class name="Hero" table="Heros" dynamic-update="true" >
+  <class name="Hero" table="Heroes" dynamic-update="true" >
     <id name="ID" type="guid">
       <generator class="guid"/>
     </id>
     <property name="Name" not-null="true" />
     <many-to-one name="Race" class="Race" column="RaceID"/>
+    <bag name="InventoryItems" inverse="true" order-by="name asc">
+      <key column="HeroID"/>
+      <one-to-many class="InventoryItem"/>
+    </bag>
+    <property name="PositionX" />
+    <property name="PositionY" />
+  </class>
+
+  <class name="InventoryItem" table="InventoryItems" dynamic-update="true" >
+    <id name="ID" type="guid">
+      <generator class="guid"/>
+    </id>
+    <property name="Count" not-null="true" />
+    <property name="IsEqipped" not-null="true" />
+    <many-to-one name="Item" class="Item" column="ItemID"/>
+    <one-to-one name="Owner" class="Hero" />
   </class>
 
   <class name="Effect" table="Effects" dynamic-update="true" >
@@ -60,5 +76,11 @@
     <property name="IsAttackable" />
     <property name="IsAggressive" />
     <property name="IsImmortal" />
+    <property name="IsImmobile" />
+    <property name="PositionX" />
+    <property name="PositionY" />
+    <property name="MovingDistance" />
+    <property name="RespawnDelay" />
   </class>
+  
 </hibernate-mapping>

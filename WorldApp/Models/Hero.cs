@@ -6,12 +6,20 @@ using System.Threading.Tasks;
 
 namespace WorldApp.Models
 {
-    public class Hero : IEntity
+    public class Hero : 
+        IEntity,
+        ISpawnable
     {
         public virtual Guid ID { get; set; }
         public virtual string Name { get; set; }
         public virtual IList<Skill> Skills { get; set; }
-        public virtual Inventory Inventory { get; set; }
         public virtual Race Race { get; set; }
+        public virtual IList<InventoryItem> InventoryItems { get; set; }
+
+        #region ISpawnable interface
+        public virtual double PositionX { get; set; }
+        public virtual double PositionY { get; set; }
+        #endregion
+
     }
 }
