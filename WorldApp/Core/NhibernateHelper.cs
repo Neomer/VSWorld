@@ -39,7 +39,7 @@ namespace Shop.SDK.Core
             configuration.Configure(configurePath);
             try
             {
-                configuration.AddAssembly(typeof(Hero).Assembly);
+                //configuration.AddAssembly(typeof(Hero).Assembly);
             }
             catch (MappingException ex)
             {

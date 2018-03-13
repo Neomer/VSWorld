@@ -16,8 +16,9 @@ namespace WorldApp
         {
             var appPath = Assembly.GetExecutingAssembly().Location;
             NHibernateHelper.Instance.Initialize(appPath.Substring(0, appPath.LastIndexOf("\\")));
-            Program.GenerateModels();
-
+            //Program.GenerateModels();
+            ManagerFactory.Instance.Register(new HeroManager());
+            ManagerFactory.Instance.Register(new NeutralManager());
         }
 
         private static void GenerateModels()
