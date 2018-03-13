@@ -16,9 +16,5 @@ namespace WorldApp.Models
         /// Идентификатор
         /// </summary>
         Guid ID { get; set; }
-        /// <summary>
-        /// Менеджер доступа к сущности
-        /// </summary>
-        IManager Manager { get; }
     }
 }

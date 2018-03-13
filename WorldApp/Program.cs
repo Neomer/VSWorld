@@ -22,6 +22,7 @@ namespace WorldApp
 
         private static void GenerateModels()
         {
+            /*
             var races = new List<Race>();
             races.Add(new Race() { ID = Guid.NewGuid(), Name = "Люди", Description = "Самая многочисленная из населяющих Континент рас, которая мало-помалу «выживает» иные расы и становится полноправным и единственным хозяином всего мира." });
             races.Add(new Race() { ID = Guid.NewGuid(), Name = "Краснолюды", Description = "Одна из древнейших рас, прибывших в ходе Сопряжения Сфер на Континент. Родственна гномам, ее представители — невысокие, широкоплечие, кряжистые и коренастые карлики с длинными бородами. Краснолюды обладают невероятными выносливостью, стойкостью и силой, они неприхотливы, дисциплинированы и яростны в бою, а потому являются отличными воинами и солдатами. Краснолюды лучше других рас сотрудничают и уживаются с людьми. Эта раса имеет имеет склонность к шахтерскому, столярному и кузнечному делу, а благодаря врожденному предпринимательскому чутью краснолюды успешно занимаются любым бизнесом — от банковского дела до содержания таверн и публичных домов." });
@@ -45,6 +46,7 @@ namespace WorldApp
             neutrals.Add(new Neutral() { ID = Guid.NewGuid(), Name = "Волк", Description = "Волк", IsImmortal = false, IsAggressive = true, IsAttackable = true, Level = 2, Health = 20, Mana = 1, Experience = 5, Inventory = null, IsImmobile = false, SpawnX = 0, SpawnY = 0, MovingDistance = 10 });
             neutrals.Add(new Neutral() { ID = Guid.NewGuid(), Name = "Помощник", Description = "Помощник для всех новичков.", IsImmortal = true, IsAggressive = false, IsAttackable = false, IsImmobile = true, Level = 0, Health = 0, Mana = 0, Experience = 0, Inventory = null, SpawnX = 10, SpawnY = 10, MovingDistance = 0 });
             Program.SaveCollection(neutrals);
+            */
 
         }
 

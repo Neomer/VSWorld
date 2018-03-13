@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WorldApp.Models
 {
-    public class Race : IEntity
+    public class Race
     {
         public virtual Guid ID { get; set; }
         public virtual string Name { get; set; }

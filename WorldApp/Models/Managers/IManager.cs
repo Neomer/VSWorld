@@ -14,7 +14,7 @@ namespace WorldApp.Models.Managers
         /// <summary>
         /// Тип сущности
         /// </summary>
-        Type EntityType { get; }
+        System.Type EntityType { get; }
         /// <summary>
         /// Возвращает сущность по идентификатору
         /// </summary>

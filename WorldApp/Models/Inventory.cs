@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WorldApp.Models
 {
-    public class Inventory : IEntity
+    public class Inventory
     {
         public virtual Guid ID { get; set; }
         public virtual Hero Owner { get; set; }
