@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace WorldApp.Models
 {
     public class Hero : 
-        
+        IEntity,
         ISpawnable
     {
         public virtual Guid ID { get; set; }
