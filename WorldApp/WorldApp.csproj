@@ -92,8 +92,7 @@
     <Compile Include="Models\Inventory.cs" />
     <Compile Include="Models\InventoryItem.cs" />
     <Compile Include="Models\Item.cs" />
-    <Compile Include="Models\Managers\BaseManager.cs" />
-    <Compile Include="Models\Managers\HeroesManager.cs" />
+    <Compile Include="Models\Managers\IManager.cs" />
     <Compile Include="Models\Neutral.cs" />
     <Compile Include="Models\Race.cs" />
     <Compile Include="Models\Skill.cs" />
