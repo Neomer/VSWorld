@@ -77,10 +77,6 @@
     <property name="IsAggressive" />
     <property name="IsImmortal" />
     <property name="IsImmobile" />
-    <property name="PositionX" />
-    <property name="PositionY" />
-    <property name="MovingDistance" />
-    <property name="RespawnDelay" />
   </class>
   
 </hibernate-mapping>

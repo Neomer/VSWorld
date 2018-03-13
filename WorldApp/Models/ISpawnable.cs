@@ -8,7 +8,13 @@ namespace WorldApp.Models
 {
     public interface ISpawnable
     {
-        double PositionX { get; set; }
-        double PositionY { get; set; }
+        /// <summary>
+        /// Позиция для возрождения. X координата.
+        /// </summary>
+        double SpawnX { get; set; }
+        /// <summary>
+        /// Позиция для возрождения. Y координата.
+        /// </summary>
+        double SpawnY { get; set; }
     }
 }

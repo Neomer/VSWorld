@@ -17,8 +17,8 @@ namespace WorldApp.Models
         public virtual IList<InventoryItem> InventoryItems { get; set; }
 
         #region ISpawnable interface
-        public virtual double PositionX { get; set; }
-        public virtual double PositionY { get; set; }
+        public virtual double SpawnX { get; set; }
+        public virtual double SpawnY { get; set; }
         #endregion
 
     }

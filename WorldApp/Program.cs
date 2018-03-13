@@ -41,9 +41,9 @@ namespace WorldApp
             Program.SaveCollection(items);
 
             var neutrals = new List<Neutral>();
-            neutrals.Add(new Neutral() { ID = Guid.NewGuid(), Name = "Заяц", Description = "Абсолютно безобидное животное не представляющее никому угрозы.", IsImmortal = false, IsAggressive = false, IsAttackable = true, Level = 1, Health = 10, Mana = 1, Experience = 1, Inventory = null, IsImmobile = false, PositionX = 0, PositionY = 0, MovingDistance = 10 });
-            neutrals.Add(new Neutral() { ID = Guid.NewGuid(), Name = "Волк", Description = "Волк", IsImmortal = false, IsAggressive = true, IsAttackable = true, Level = 2, Health = 20, Mana = 1, Experience = 5, Inventory = null, IsImmobile = false, PositionX = 0, PositionY = 0, MovingDistance = 10 });
-            neutrals.Add(new Neutral() { ID = Guid.NewGuid(), Name = "Помощник", Description = "Помощник для всех новичков.", IsImmortal = true, IsAggressive = false, IsAttackable = false, IsImmobile = true, Level = 0, Health = 0, Mana = 0, Experience = 0, Inventory = null, PositionX = 10, PositionY = 10, MovingDistance = 0 });
+            neutrals.Add(new Neutral() { ID = Guid.NewGuid(), Name = "Заяц", Description = "Абсолютно безобидное животное не представляющее никому угрозы.", IsImmortal = false, IsAggressive = false, IsAttackable = true, Level = 1, Health = 10, Mana = 1, Experience = 1, Inventory = null, IsImmobile = false, SpawnX = 0, SpawnY = 0, MovingDistance = 10 });
+            neutrals.Add(new Neutral() { ID = Guid.NewGuid(), Name = "Волк", Description = "Волк", IsImmortal = false, IsAggressive = true, IsAttackable = true, Level = 2, Health = 20, Mana = 1, Experience = 5, Inventory = null, IsImmobile = false, SpawnX = 0, SpawnY = 0, MovingDistance = 10 });
+            neutrals.Add(new Neutral() { ID = Guid.NewGuid(), Name = "Помощник", Description = "Помощник для всех новичков.", IsImmortal = true, IsAggressive = false, IsAttackable = false, IsImmobile = true, Level = 0, Health = 0, Mana = 0, Experience = 0, Inventory = null, SpawnX = 10, SpawnY = 10, MovingDistance = 0 });
             Program.SaveCollection(neutrals);
 
         }
